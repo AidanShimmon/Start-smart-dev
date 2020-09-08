@@ -1,42 +1,38 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
+import React from 'react'
+import { Link } from 'gatsby'
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+import LinkedinIcon from "../assets/linkedin.svg";
+import GithubIcon from "../assets/github.svg";
+
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="header__content">
+        <div className="header__icons">
+          <a 
+            href="https://www.linkedin.com/in/aidan-shimmon-738428168/"
+            target="_blank"
+            rel="nofollow"
+          >
+            <LinkedinIcon/>
+          </a>
+          <a 
+            href="https://github.com/AidanShimmon"
+            target="_blank"
+            rel="nofollow"
+          >
+            <GithubIcon/>
+          </a>
+        </div>
+
+        <nav className="header__navigation">
+          <Link className="header__navigation__link" to="#about" aria-label="about">About</Link>
+          <Link className="header__navigation__link" to="#projects" aria-label="projects">Projects</Link>
+          <Link className="header__navigation__link" to="#contact" aria-label="contact">Contact</Link>
+        </nav>
+      </div>
     </div>
-  </header>
-)
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
+  )
 }
 
 export default Header
