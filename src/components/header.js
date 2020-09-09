@@ -12,14 +12,14 @@ const Header = () => {
           <a 
             href="https://www.linkedin.com/in/aidan-shimmon-738428168/"
             target="_blank"
-            rel="nofollow"
+            rel="noreferrer"
           >
             <LinkedinIcon/>
           </a>
           <a 
             href="https://github.com/AidanShimmon"
             target="_blank"
-            rel="nofollow"
+            rel="noreferrer"
           >
             <GithubIcon/>
           </a>
