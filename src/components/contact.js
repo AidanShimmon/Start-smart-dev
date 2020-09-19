@@ -3,7 +3,7 @@ import ContactImg from '../assets/undraw_Email_campaign_re_m6k5.svg'
 
 const Contact = () => {
     return (
-        <div className="contact">
+        <section className="contact">
             
             <div className="contact__content">
 
@@ -33,7 +33,7 @@ const Contact = () => {
                     <ContactImg/>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
 
