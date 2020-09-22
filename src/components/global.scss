@@ -66,10 +66,19 @@ $color__secondary: #49C4FF;
 
   &__icons {
     svg {
+      transition: 0.2s ease-out;
       width: 25px;
 
       @include for-size(tablet-landscape-up) {
         width: 35px;
+      }
+    }
+
+    a {
+      &:hover {
+        svg {
+          transform: scale(1.15);
+        }
       }
     }
 
@@ -94,6 +103,22 @@ $color__secondary: #49C4FF;
         font-size: 1.5rem;
       }
 
+      &:nth-child(1):hover ~ hr {
+        opacity: 1;
+      }
+
+      &:nth-child(2):hover ~ hr {
+        margin-left: 32%;
+        width: 30%;
+        opacity: 1;
+      }
+
+      &:nth-child(3):hover ~ hr {
+        margin-left: 71%;
+        width: 29%;
+        opacity: 1;
+      }
+
       +.header__navigation__link {
         margin-left: 1rem;
 
@@ -101,6 +126,16 @@ $color__secondary: #49C4FF;
           margin-left: 2rem;
         }
       }
+    }
+
+    hr {
+      background: $color__font__main;
+      width: 22.5%;
+      height: 0.1rem;
+      opacity: 0;
+      margin: 0;
+      border: none;      
+      transition: .3s ease-in-out;
     }
   }
 }
@@ -156,7 +191,7 @@ $color__secondary: #49C4FF;
         width: 75%;
         opacity: 0.1;
         
-        @include for-size(tablet-landscape-up) {
+        @include for-size(desktop-up) {
           width: 50%;
           opacity: 1;
         }
@@ -230,9 +265,11 @@ $color__secondary: #49C4FF;
       grid-column: 1/12;
       opacity: 0.2;
       grid-row: 1;
+      display: none;
 
       @include for-size(tablet-landscape-up) {
         grid-column: 8/12;
+        display: block;
       }
 
       svg {
@@ -263,8 +300,12 @@ $color__secondary: #49C4FF;
     font-weight: 700;
     margin: 0;
 
+    @include for-size(tablet-portrait-up) {
+      font-size: 6rem;
+    }
+
     @include for-size(tablet-landscape-up) {
-      font-size: 12rem;
+      font-size: 10rem;
       text-indent: -14px;
     }
   }
