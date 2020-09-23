@@ -1,7 +1,8 @@
 import React from 'react'
 
-import "./Global.scss"
+
 import "normalize.css"
+import "./global.scss"
 import Header from "./header"
 import Footer from "./footer" 
 
