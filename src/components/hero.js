@@ -7,6 +7,9 @@ export default class Hero extends Component {
     componentDidMount() {
         var tl = new TimelineLite({});
         
+        const heroSection = document.getElementById("hero");
+        const headerNavigation = document.getElementById("header__navigation");
+        const headerIcons = document.getElementById("header__icons");
         const heroName = document.getElementById("heroName");
         const heroProfession = document.getElementById("heroProfession");
         const heroButton = document.getElementById("heroButton");
@@ -26,7 +29,10 @@ export default class Hero extends Component {
         const bottomCircle = document.getElementById("bottomCircle");
         const leftCircle = document.getElementById("leftCircle");
 
-        tl.from(heroName, 0.4, {y:-25, opacity: 0})
+        tl.from(heroSection, 0.6, {scaleY: 0, opacity: 0})
+          .from(headerNavigation, 0.3, {opacity: 0})
+          .from(headerIcons, 0.3, {opacity: 0}, "-=0.3")
+          .from(heroName, 0.4, {y:-25, opacity: 0}, "-=0.3")
           .from(heroProfession, 0.4, {y:-25, opacity: 0}) 
           .from(heroButton, 0.6, {opacity: 0}, "-=0.4")
           .from(heroSvg, 0.7, {opacity:0})
@@ -36,9 +42,9 @@ export default class Hero extends Component {
           .from(screenBars3, 0.3, {scaleX:0, transformOrigin:"left"}, "-=0.1")
           .from(screenBars4, 0.3, {scaleX:0, transformOrigin:"left"}, "-=0.1")
           .from(screenBars5, 0.3, {scaleX:0, transformOrigin:"left"}, "-=0.1")
-          .from(screenBottomBar, 0.2, {scaleY:0, transformOrigin:"top"})
-          .from(topLine, 0.4, {scaleX: 0, transformOrigin:"left"}, "-=0.2")
-          .from(middleLine, 0.4, {scaleX: 0, transformOrigin:"right"}, "-=0.2")
+          .from(screenBottomBar, 0.2, {scaleY:0, transformOrigin:"top"}, "-=0.9")
+          .from(topLine, 0.4, {scaleX: 0, transformOrigin:"left"}, "-=0.9")
+          .from(middleLine, 0.4, {scaleX: 0, transformOrigin:"right"}, "-=0.9")
           .from(topBoxes, 0.4, {opacity: 0})
           .from(bottomBoxes, 0.4, {opacity: 0}, "-=0.4")
           .from(rightBoxes, 0.4, {opacity: 0}, "-=1")
@@ -48,7 +54,7 @@ export default class Hero extends Component {
     
     render() {
         return ( 
-            <section className="hero">
+            <section id="hero" className="hero">
                 <div className="hero__content">
 
                     <div className="hero__content__text">
