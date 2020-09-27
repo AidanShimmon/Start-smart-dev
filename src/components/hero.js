@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 import {TimelineLite, gsap} from 'gsap';
-import { CSSPlugin } from 'gsap/CSSPlugin'
+import { CSSRule } from 'gsap/CSSRule'
 import HeroSvg from "../assets/hero.svg";
 
 export default class Hero extends Component {
     componentDidMount() {
         // Force CSSPlugin to not get dropped during build
-        gsap.registerPlugin(CSSPlugin)
-        
+        gsap.registerPlugin(CSSRule);
+
         var tl = new TimelineLite({});
         
         const heroSection = document.getElementById("hero");
