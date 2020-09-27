@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-import {TimelineLite, gsap} from 'gsap';
-import { CSSRule } from 'gsap/CSSRule'
+import {gsap} from 'gsap';
 import HeroSvg from "../assets/hero.svg";
 
 export default class Hero extends Component {
     componentDidMount() {
-        // Force CSSPlugin to not get dropped during build
-        gsap.registerPlugin(CSSRule);
-
-        var tl = new TimelineLite({});
+        var tl = gsap.timeline({});
         
         const heroSection = document.getElementById("hero");
         const headerNavigation = document.getElementById("header__navigation");
@@ -33,27 +29,27 @@ export default class Hero extends Component {
         const bottomCircle = document.getElementById("bottomCircle");
         const leftCircle = document.getElementById("leftCircle");
 
-        tl.from(heroSection, {cssRule: {scaleY: 0, opacity: 0}, duration: 0.6 })
-          .from(headerNavigation, {cssRule: {opacity: 0}, duration: 0.3})
-          .from(headerIcons, {cssRule: {opacity: 0}, duration: 0.3}, "-=0.3")
-          .from(heroName, {cssRule: {y:-25, opacity: 0 }, duration: 0.4}, "-=0.3")
-          .from(heroProfession, {cssRule: {y:-25, opacity: 0},duration: 0.4}) 
-          .from(heroButton, {cssRule: {opacity: 0}, duration: 0.6}, "-=0.4")
-          .from(heroSvg, {cssRule: {opacity:0}, duration: 0.7})
-          .from(phone, {cssRule: {opacity: 0, x:-100}, duration: 0.5}, "-=0.4")
-          .from(screenBars1, {cssRule: {scaleX:0, transformOrigin:"left"},duration: 0.3})
-          .from(screenBars2, {cssRule: {scaleX:0, transformOrigin:"left"},duration: 0.3}, "-=0.1")
-          .from(screenBars3, {cssRule: {scaleX:0, transformOrigin:"left"},duration: 0.3}, "-=0.1")
-          .from(screenBars4, {cssRule: {scaleX:0, transformOrigin:"left"},duration: 0.3}, "-=0.1")
-          .from(screenBars5, {cssRule: {scaleX:0, transformOrigin:"left"},duration: 0.3}, "-=0.1")
-          .from(screenBottomBar, {cssRule: {scaleY:0, transformOrigin:"top"}, duration: 0.2}, "-=0.9")
-          .from(topLine, {cssRule: {scaleX: 0, transformOrigin:"left"}, duration: 0.4}, "-=0.9")
-          .from(middleLine, {cssRule: {scaleX: 0, transformOrigin:"right"}, duration: 0.4}, "-=0.9")
-          .from(topBoxes, {cssRule: {opacity: 0}, duration: 0.4})
-          .from(bottomBoxes, {cssRule: {opacity: 0}, duration: 0.4}, "-=0.4")
-          .from(rightBoxes, {cssRule: {opacity: 0}, duration: 0.4}, "-=1")
-          .from(bottomCircle, {cssRule: {opacity: 0}, duration: 0.4}, "-=0.1")
-          .from(leftCircle, {cssRule: {opacity: 0, x: 50}, duration: 0.4}, "-=0.3")    
+        tl.from(heroSection, {duration: 0.6, scaleY: 0, opacity: 0})
+          .from(headerNavigation, {duration: 0.3, opacity: 0})
+          .from(headerIcons, {duration: 0.3, opacity: 0}, "-=0.3")
+          .from(heroName, {duration: 0.4, y:-25, opacity: 0}, "-=0.3")
+          .from(heroProfession, {duration: 0.4, y:-25, opacity: 0}) 
+          .from(heroButton, {duration: 0.6, opacity: 0}, "-=0.4")
+          .from(heroSvg, {duration: 0.7, opacity:0})
+          .from(phone, {duration: 0.5, opacity: 0, x:-100}, "-=0.4")
+          .from(screenBars1, {duration: 0.3, scaleX:0, transformOrigin:"left"})
+          .from(screenBars2, {duration: 0.3, scaleX:0, transformOrigin:"left"}, "-=0.1")
+          .from(screenBars3, {duration: 0.3, scaleX:0, transformOrigin:"left"}, "-=0.1")
+          .from(screenBars4, {duration: 0.3, scaleX:0, transformOrigin:"left"}, "-=0.1")
+          .from(screenBars5, {duration: 0.3, scaleX:0, transformOrigin:"left"}, "-=0.1")
+          .from(screenBottomBar, {duration: 0.2, scaleY:0, transformOrigin:"top"}, "-=0.9")
+          .from(topLine, {duration: 0.4, scaleX: 0, transformOrigin:"left"}, "-=0.9")
+          .from(middleLine, {duration: 0.4, scaleX: 0, transformOrigin:"right"}, "-=0.9")
+          .from(topBoxes, {duration: 0.4, opacity: 0})
+          .from(bottomBoxes, {duration: 0.4, opacity: 0}, "-=0.4")
+          .from(rightBoxes, {duration: 0.4, opacity: 0}, "-=1")
+          .from(bottomCircle, {duration: 0.4, opacity: 0}, "-=0.1")
+          .from(leftCircle, {duration: 0.4, opacity: 0, x: 50}, "-=0.3")    
     }
     
     render() {
