@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-import {TweenMax, TimelineLite} from 'gsap';
+import {TimelineLite} from 'gsap';
 import HeroSvg from "../assets/hero.svg";
 
 export default class Hero extends Component {
@@ -29,27 +29,27 @@ export default class Hero extends Component {
         const bottomCircle = document.getElementById("bottomCircle");
         const leftCircle = document.getElementById("leftCircle");
 
-        tl.from(heroSection, 0.6, {scaleY: 0, opacity: 0})
-          .from(headerNavigation, 0.3, {opacity: 0})
-          .from(headerIcons, 0.3, {opacity: 0}, "-=0.3")
-          .from(heroName, 0.4, {y:-25, opacity: 0}, "-=0.3")
-          .from(heroProfession, 0.4, {y:-25, opacity: 0}) 
-          .from(heroButton, 0.6, {opacity: 0}, "-=0.4")
-          .from(heroSvg, 0.7, {opacity:0})
-          .from(phone, 0.5, {opacity: 0, x:-100}, "-=0.4")
-          .from(screenBars1, 0.3, {scaleX:0, transformOrigin:"left"})
-          .from(screenBars2, 0.3, {scaleX:0, transformOrigin:"left"}, "-=0.1")
-          .from(screenBars3, 0.3, {scaleX:0, transformOrigin:"left"}, "-=0.1")
-          .from(screenBars4, 0.3, {scaleX:0, transformOrigin:"left"}, "-=0.1")
-          .from(screenBars5, 0.3, {scaleX:0, transformOrigin:"left"}, "-=0.1")
-          .from(screenBottomBar, 0.2, {scaleY:0, transformOrigin:"top"}, "-=0.9")
-          .from(topLine, 0.4, {scaleX: 0, transformOrigin:"left"}, "-=0.9")
-          .from(middleLine, 0.4, {scaleX: 0, transformOrigin:"right"}, "-=0.9")
-          .from(topBoxes, 0.4, {opacity: 0})
-          .from(bottomBoxes, 0.4, {opacity: 0}, "-=0.4")
-          .from(rightBoxes, 0.4, {opacity: 0}, "-=1")
-          .from(bottomCircle, 0.4, {opacity: 0}, "-=0.1")
-          .from(leftCircle, 0.4, {opacity: 0, x: 50}, "-=0.3")    
+        tl.from(heroSection, {scaleY: 0, duration: 0.6, opacity: 0})
+          .from(headerNavigation, {opacity: 0, duration: 0.3})
+          .from(headerIcons, {opacity: 0, duration: 0.3}, "-=0.3")
+          .from(heroName, {y:-25, duration: 0.4, opacity: 0}, "-=0.3")
+          .from(heroProfession, {y:-25, duration: 0.4, opacity: 0}) 
+          .from(heroButton, {opacity: 0, duration: 0.6}, "-=0.4")
+          .from(heroSvg, {opacity:0, duration: 0.7})
+          .from(phone, {opacity: 0, x:-100, duration: 0.5}, "-=0.4")
+          .from(screenBars1, {scaleX:0, duration: 0.3, transformOrigin:"left"})
+          .from(screenBars2, {scaleX:0, duration: 0.3, transformOrigin:"left"}, "-=0.1")
+          .from(screenBars3, {scaleX:0, duration: 0.3, transformOrigin:"left"}, "-=0.1")
+          .from(screenBars4, {scaleX:0, duration: 0.3, transformOrigin:"left"}, "-=0.1")
+          .from(screenBars5, {scaleX:0, duration: 0.3, transformOrigin:"left"}, "-=0.1")
+          .from(screenBottomBar, {scaleY:0, duration: 0.2, transformOrigin:"top"}, "-=0.9")
+          .from(topLine, {scaleX: 0, duration: 0.4, transformOrigin:"left"}, "-=0.9")
+          .from(middleLine, {scaleX: 0, duration: 0.4, transformOrigin:"right"}, "-=0.9")
+          .from(topBoxes, {duration: 0.4, opacity: 0})
+          .from(bottomBoxes, {duration: 0.4, opacity: 0}, "-=0.4")
+          .from(rightBoxes, {duration: 0.4, opacity: 0}, "-=1")
+          .from(bottomCircle, {duration: 0.4, opacity: 0}, "-=0.1")
+          .from(leftCircle, {duration: 0.4, opacity: 0, x: 50}, "-=0.3")    
     }
     
     render() {

@@ -27,7 +27,7 @@ const Projects = () => {
         <div className="projects__tile__content">
           <Img 
             className="projects__tile__image"
-            fluid={data.allImageSharp.edges[0].node.fluid}
+            fluid={data.allImageSharp.edges[1].node.fluid}
             alt="Bens"
           />
 
@@ -43,7 +43,7 @@ const Projects = () => {
         <div className="projects__tile__content">
           <Img 
             className="projects__tile__image"
-            fluid={data.allImageSharp.edges[1].node.fluid}
+            fluid={data.allImageSharp.edges[2].node.fluid}
             alt="Hideaway"
           />
 
