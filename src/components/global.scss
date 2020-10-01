@@ -29,15 +29,19 @@ $color__secondary: #49C4FF;
   background: linear-gradient(89.93deg, #48C8FF 0.1%, #5182FF 22.99%, #4735FF 46.92%, #7932FF 72.93%, #9D00FF 99.98%);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .main {
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .button {
   cursor: pointer;
   background-image: linear-gradient(to top, #4735FF 50%,$color__secondary 50%);
   background-size: 100% 200%;
-  background-position: 0 5%;
+  background-position: 0 0;
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   color: $color__font__main;

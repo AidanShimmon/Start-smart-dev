@@ -4,7 +4,7 @@ import AboutMe from "../assets/aboutMe.svg";
 
 const aboutMe = () => {
   return (
-    <section className="about">
+    <section className="about" id="about">
       <div className="about__content">
         <div className="about__content__text">
           <span className="about__watermark">About</span>

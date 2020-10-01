@@ -20,7 +20,7 @@ const Projects = () => {
   `)
 
   return (
-    <section className="projects">
+    <section className="projects" id="projects">
       <h2 className="projects__title">Projects</h2>
 
       <div className="projects__tile">
