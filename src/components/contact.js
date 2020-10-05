@@ -10,7 +10,7 @@ const Contact = () => {
                 <h2 className="contact__content__title">Contact</h2>
 
                 <div className="contact__content__form">
-                    <form method="post" netlify-honeypot="bot-field" data-netlify="true" name="contact" className="form">
+                    <form method="post" netlify-honeypot="bot-field" netlify data-netlify="true" name="contact" className="form">
                         <div className="form__name">
                             <label for="name">Name* </label>
                             <input type="text" name="name" id="name" required/>
