@@ -29,6 +29,10 @@ $color__secondary: #49C4FF;
   background: linear-gradient(89.93deg, #48C8FF 0.1%, #5182FF 22.99%, #4735FF 46.92%, #7932FF 72.93%, #9D00FF 99.98%);
 }
 
+* {
+  -webkit-backface-visibility: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
