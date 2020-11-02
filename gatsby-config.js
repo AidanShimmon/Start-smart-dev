@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Aidan Shimmon portfolio`,
-        short_name: `Aidan S`,
+        name: `Start Smart Development`,
+        short_name: `StartSmartDev`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

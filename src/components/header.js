@@ -1,12 +1,18 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
+import { Helmet } from "react-helmet"
 import LinkedinIcon from "../assets/linkedin.svg";
 import MailIcon from "../assets/mail.svg";
 
 const Header = () => {
   return (
     <div className="header">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Start smart development</title>
+        <meta name="description" content="Start smart by letting us help you develop your businesses online presence" />
+        <link rel="canonical" href="https://startsmartdevelopment.com" />
+      </Helmet>
       <div className="header__content">
         <div id="header__icons" className="header__icons">
           {/* <a 
