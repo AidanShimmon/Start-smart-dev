@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Aidan Shimmon`,
-    description: `Web developer specialized in delivering modern, clean, fast and effective websites.`,
+    title: `Start smart development`,
+    description: `Helping new businesses create websites built to suit there needs.`,
     author: `@aidanshimmon`,
   },
   plugins: [
