@@ -2,26 +2,25 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import LinkedinIcon from "../assets/linkedin.svg";
-import GithubIcon from "../assets/github.svg";
+import MailIcon from "../assets/mail.svg";
 
 const Header = () => {
   return (
     <div className="header">
       <div className="header__content">
         <div id="header__icons" className="header__icons">
-          <a 
+          {/* <a 
             href="https://www.linkedin.com/in/aidan-shimmon-738428168/"
             target="_blank"
             rel="noreferrer"
           >
             <LinkedinIcon/>
-          </a>
+          </a> */}
           <a 
-            href="https://github.com/AidanShimmon"
-            target="_blank"
+            href="mailto:aidan@startsmartdevelopment.com"
             rel="noreferrer"
           >
-            <GithubIcon/>
+            <MailIcon/>
           </a>
         </div>
 
