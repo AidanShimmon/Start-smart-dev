@@ -1,5 +1,5 @@
 import React from 'react'
-import ContactImg from '../assets/undraw_Email_campaign_re_m6k5.svg'
+import ContactImg from '../assets/emailCampaign.svg'
 
 const Contact = () => {
     return (

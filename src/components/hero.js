@@ -29,12 +29,12 @@ export default class Hero extends Component {
             const bottomCircle = document.getElementById("bottomCircle");
             const leftCircle = document.getElementById("leftCircle");
 
-            tl.from(heroSection, {duration: 0.6, scaleY: 0, opacity: 0})
+            tl.from(heroSection, {duration: 0.6, scaleY: 0, transformOrigin:"top", opacity: 0}, "+=0.2")
             .from(headerNavigation, {duration: 0.3, opacity: 0})
             .from(headerIcons, {duration: 0.3, opacity: 0}, "-=0.3")
             .from(heroName, {duration: 0.4, y:-25, opacity: 0}, "-=0.3")
-            .from(heroProfession, {duration: 0.4, y:-25, opacity: 0}) 
-            .from(heroButton, {duration: 0.6, opacity: 0}, "-=0.4")
+            .from(heroProfession, {duration: 0.4, y:-25, opacity: 0}, "-=0.3") 
+            .from(heroButton, {duration: 0.4, y:-25, opacity: 0}, "-=0.3")
             .from(heroSvg, {duration: 0.7, opacity:0})
             .from(phone, {duration: 0.5, opacity: 0, x:-100}, "-=0.4")
             .from(screenBars1, {duration: 0.3, scaleX:0, transformOrigin:"left"})
@@ -58,15 +58,15 @@ export default class Hero extends Component {
                 <div className="hero__content">
 
                     <div className="hero__content__text">
-                        <h1 id="heroName">Aidan Shimmon</h1>
-                        <h2 id="heroProfession">Web developer</h2>
+                        <h1 id="heroName">Start Smart<br/>Development</h1>
+                        <h2 id="heroProfession">Looking to <strong>start a new bussiness</strong> and require a <strong>website</strong>?</h2>
                         <Link 
                             className="hero__button button" 
                             to="#about" 
                             aria-label="about"
                             id="heroButton"
                         >
-                        About me
+                        Learn more
                         </Link>
                     </div>
 

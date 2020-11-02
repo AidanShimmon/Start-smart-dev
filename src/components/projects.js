@@ -33,8 +33,7 @@ const Projects = () => {
 
           <div className="projects__tile__text">
             <h3>Bens bespoke<br/> furniture and joinery</h3>
-            <p>Specialized in delivering <strong>modern</strong>, <strong>clean</strong>, <strong>fast</strong> and <strong>effective</strong> websites. My skillset consists of HTML, SCSS, JavaScript, Wordpress and Vue. </p>
-            <p>Outside of web development I am passionate about music, excersice and sustainability.</p>
+            <p>Ben wanted to increase his online presence and create a portfolio, we developed a website that both showcases his work and allows potential clients to easily connect with him.</p>
           </div>
         </div>
       </div>
@@ -49,8 +48,7 @@ const Projects = () => {
 
           <div className="projects__tile__text">
             <h3>The Hideaway Beauty Cabin</h3>
-            <p>Specialized in delivering <strong>modern</strong>, <strong>clean</strong>, <strong>fast</strong> and <strong>effective</strong> websites. My skillset consists of HTML, SCSS, JavaScript, Wordpress and Vue. </p>
-            <p>Outside of web development I am passionate about music, excersice and sustainability.</p>
+            <p>We designed and developed a WordPress website to allow our client to easily manage and update their website.</p>
           </div>
         </div>
       </div>
