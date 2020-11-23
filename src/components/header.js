@@ -1,8 +1,7 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react"
+import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
-import LinkedinIcon from "../assets/linkedin.svg";
-import MailIcon from "../assets/mail.svg";
+import MailIcon from "../assets/mail.svg"
 
 const Header = () => {
   return (
@@ -10,7 +9,17 @@ const Header = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>Start smart development</title>
-        <meta name="description" content="Start smart by letting us help you develop your businesses online presence" />
+        <meta
+          name="description"
+          content="Start smart by letting us help you develop your businesses online presence"
+        />
+        <meta property="og:title" content="Start smart development" />
+        <meta
+          property="og:description"
+          content="Start smart by letting us help you develop your businesses online presence"
+        />
+        <meta property="og:image" content="`./src/images/favicon.png`" />
+        <meta property="og:url" content="https://startsmartdevelopment.com" />
         <link rel="canonical" href="https://startsmartdevelopment.com" />
       </Helmet>
       <div className="header__content">
@@ -22,19 +31,34 @@ const Header = () => {
           >
             <LinkedinIcon/>
           </a> */}
-          <a 
-            href="mailto:aidan@startsmartdevelopment.com"
-            rel="noreferrer"
-          >
-            <MailIcon/>
+          <a href="mailto:aidan@startsmartdevelopment.com" rel="noreferrer">
+            <MailIcon />
           </a>
         </div>
 
         <nav id="header__navigation" className="header__navigation">
-          <Link className="header__navigation__link one" to="#about" aria-label="about">About</Link>
-          <Link className="header__navigation__link two" to="#projects" aria-label="projects">Projects</Link>
-          <Link className="header__navigation__link three" to="#contact" aria-label="contact">Contact</Link>
-          <hr/>
+          <Link
+            className="header__navigation__link one"
+            to="#about"
+            aria-label="about"
+          >
+            About
+          </Link>
+          <Link
+            className="header__navigation__link two"
+            to="#projects"
+            aria-label="projects"
+          >
+            Projects
+          </Link>
+          <Link
+            className="header__navigation__link three"
+            to="#contact"
+            aria-label="contact"
+          >
+            Contact
+          </Link>
+          <hr />
         </nav>
       </div>
     </div>
