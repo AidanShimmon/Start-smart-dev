@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
 import MailIcon from "../assets/mail.svg"
+import OGheaderImage from "../images/favicon.png"
 
 const Header = () => {
   return (
@@ -18,7 +19,7 @@ const Header = () => {
           property="og:description"
           content="Start smart by letting us help you develop your businesses online presence"
         />
-        <meta property="og:image" content="`./src/images/favicon.png`" />
+        <meta property="og:image" content={OGheaderImage} />
         <meta property="og:url" content="https://startsmartdevelopment.com" />
         <link rel="canonical" href="https://startsmartdevelopment.com" />
       </Helmet>
