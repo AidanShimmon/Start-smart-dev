@@ -236,15 +236,19 @@ html {
 
   &__watermark {
     position: absolute;
-    top: 0;
+    top: 5vh;
     left: 0;
-    color: $color__font__main;
-    opacity: 0.17;
-    text-shadow: 35px 4px 16px rgba(0, 0, 0, 0.2);
-    font-size: 12rem;
-    margin: 0;
-    font-weight: 700;
-    pointer-events: none;
+    overflow: hidden;
+
+    h4 {
+      color: $color__font__main;
+      opacity: 0.1;
+      text-shadow: 35px 4px 16px rgba(0, 0, 0, 0.2);
+      font-size: 12rem;
+      margin: 0;
+      font-weight: 700;
+      pointer-events: none;
+    }
   }
 
   &__content {
@@ -252,15 +256,17 @@ html {
     display: grid;
     grid-template-columns: repeat(11,1fr);
     align-items: flex-end;
+    overflow: hidden;
     @include gradientBackground;
 
     &__text {
-      padding: 5rem 0;
+      padding: 12vh 0;
       grid-column: 2/12;
       grid-row: 1;
       position: relative;
       color: $color__font__main; 
       width: 80%;
+      font-size: 1.25rem;
 
       @include for-size(tablet-landscape-up) {
         grid-column: 2/8;
@@ -330,7 +336,7 @@ html {
   }
 
   &__tile {
-    grid-column: 2/13;
+    grid-column: 2/10;
     display: grid;
     grid-template-columns: repeat(11,1fr);
     @include gradientBackground;
@@ -351,7 +357,7 @@ html {
     }
 
     &:nth-of-type(2n) {
-      grid-column: 1/12;
+      grid-column: 3/12;
       padding: 2rem 1rem;
 
       @include for-size(tablet-landscape-up) {
