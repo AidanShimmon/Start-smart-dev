@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
 import {gsap} from 'gsap';
+import Button from "./button";
 import HeroSvg from "../assets/hero.svg";
 
 export default class Hero extends Component {
@@ -14,20 +14,6 @@ export default class Hero extends Component {
             const heroProfession = document.getElementById("heroProfession");
             const heroButton = document.getElementById("heroButton");
             const heroSvg = document.getElementById("heroSvg");
-            const phone = document.getElementById("phone");
-            const screenBottomBar = document.getElementById("screenBottomBar");
-            const screenBars1 = document.getElementById("screenBars1");
-            const screenBars2 = document.getElementById("screenBars2");
-            const screenBars3 = document.getElementById("screenBars3");
-            const screenBars4 = document.getElementById("screenBars4");
-            const screenBars5 = document.getElementById("screenBars5");
-            const topLine = document.getElementById("topLine");
-            const middleLine = document.getElementById("middleLine");
-            const topBoxes = document.getElementById("topBoxes");
-            const bottomBoxes = document.getElementById("bottomBoxes");
-            const rightBoxes = document.getElementById("rightBoxes");
-            const bottomCircle = document.getElementById("bottomCircle");
-            const leftCircle = document.getElementById("leftCircle");
 
             tl.from(heroSection, {duration: 0.6, scaleY: 0, transformOrigin:"top", opacity: 0}, "+=0.2")
             .from(headerNavigation, {duration: 0.3, opacity: 0})
@@ -46,14 +32,12 @@ export default class Hero extends Component {
                     <div className="hero__content__text">
                         <h1 id="heroName">Start Smart<br/>Development</h1>
                         <h2 id="heroProfession">Looking to <strong>start a new bussiness</strong> and require a <strong>website</strong>?</h2>
-                        <Link 
-                            className="hero__button button" 
-                            to="#about" 
-                            aria-label="about"
+                        <Button
+                            text="Learn more"
+                            link="#about"
                             id="heroButton"
-                        >
-                        Learn more
-                        </Link>
+                            className="hero__button button"
+                        />
                     </div>
 
                     <HeroSvg id="heroSvg"/>

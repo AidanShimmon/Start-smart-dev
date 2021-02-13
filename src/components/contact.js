@@ -7,7 +7,7 @@ const Contact = () => {
             
             <div className="contact__content">
 
-                <h2 className="contact__content__title">Contact</h2>
+                <h2 className="contact__content__title">Contact us</h2>
 
                 <div className="contact__content__form">
                     <form method="post" netlify-honeypot="bot-field" netlify data-netlify="true" name="contact" className="form">
@@ -30,10 +30,7 @@ const Contact = () => {
                         </div>
                     </form>
                 </div>
-
-                <div className="contact__content__img">
-                    <ContactImg/>
-                </div>
+                
             </div>
         </section>
     )

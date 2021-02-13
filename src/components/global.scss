@@ -29,6 +29,11 @@ $color__secondary: #49C4FF;
   background: linear-gradient(89.93deg, #48C8FF 0.1%, #5182FF 22.99%, #4735FF 46.92%, #7932FF 72.93%, #9D00FF 99.98%);
 }
 
+@mixin maxWidth {
+  max-width: 2500px;
+  margin: 0 auto;
+}
+
 * {
   -webkit-backface-visibility: hidden;
 }
@@ -74,6 +79,7 @@ html {
   padding: 2rem 0;
   z-index: 1;
   @include layoutColumns;
+  @include maxWidth();
   
 
   &__content {
@@ -166,9 +172,11 @@ html {
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   @include layoutColumns;
   @include gradientBackground;
+  @include maxWidth();
 
   @include for-size(tablet-landscape-up) {
     height: 90vh;
+    max-height: 1000px;
   }
 
   &__content {
@@ -179,16 +187,23 @@ html {
     height: 100%;
     color: $color__font__main;
     grid-column: 2/12;
+    
 
     &__text {
-      padding-right: 6em;
+      padding-right: 0;
+      grid-column: 1/3;
+
+      @include for-size(tablet-landscape-up) {
+        padding-right: 6em;
+        grid-column: 1/2;
+      }
     }
 
     h1 {
-      font-weight: 200;
-      font-size: 1rem;
+      font-weight: 700;
+      font-size: 1.5rem;
       letter-spacing: 2px;
-      margin: 0 0 0.5rem 0;
+      margin: 0 0 1rem 0;
 
       @include for-size(tablet-landscape-up) {
         font-size: 3.5rem;
@@ -200,7 +215,7 @@ html {
 
     h2 {
       font-weight: 200;
-      font-size: 1rem;
+      font-size: 1.25rem;
       letter-spacing: 0px;
       margin: 0 0 2rem 0;
 
@@ -228,7 +243,8 @@ html {
 .about {
   padding: 2rem 0;
   overflow: hidden;
-  @include layoutColumns;
+  @include layoutColumns;  
+  @include maxWidth();
 
   @include for-size(tablet-landscape-up) {
     padding: 6rem 0;
@@ -244,10 +260,14 @@ html {
       color: $color__font__main;
       opacity: 0.1;
       text-shadow: 35px 4px 16px rgba(0, 0, 0, 0.2);
-      font-size: 12rem;
+      font-size: 6rem;
       margin: 0;
       font-weight: 700;
       pointer-events: none;
+
+      @include for-size(tablet-landscape-up) {
+        font-size: 12rem;
+      }
     }
   }
 
@@ -273,13 +293,23 @@ html {
       }
 
       h3 {
-        margin: 1rem 0 4rem 0;
-        font-size: 1.785rem;
+        margin: 1rem 0 2rem 0;
+        font-size: 1.5rem;
+
+        @include for-size(tablet-landscape-up) {
+          margin: 1rem 0 4rem 0;
+          font-size: 1.785rem;
+        }
       }
 
       p {
         &:last-of-type {
           margin: 0;
+        }
+        font-size: 1rem;
+
+        @include for-size(tablet-landscape-up) {
+          font-size: 1.25rem;
         }
       }
     }
@@ -311,8 +341,10 @@ html {
 }
 
 .projects {
+  padding-bottom: 2rem;
   overflow: hidden;
   @include layoutColumns;
+  @include maxWidth();
 
   &__title {
     grid-column: 2/12;
@@ -335,82 +367,65 @@ html {
     }
   }
 
-  &__tile {
-    grid-column: 2/10;
+  &__wrapper {
     display: grid;
-    grid-template-columns: repeat(11,1fr);
-    @include gradientBackground;
-    padding: 2rem 1rem;
-    margin: 1rem 0;
+    grid-column: 2/12;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
 
     @include for-size(tablet-landscape-up) {
-      margin: 2rem 0;
-      padding: 4rem 0 4rem 4rem;
+      padding: 6rem 0;
+      gap: 4rem;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     }
+  }
 
-    &:first-of-type {
-      margin: 2rem 0;
+  &__tile {
+    @include gradientBackground;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0px 15px 15px #cecece, 0px 0px 25px #f1f1f1;
+    text-decoration: none;
+    transition: 0.3s ease;
 
-      @include for-size(tablet-landscape-up) {
-        margin: 5rem 0 2rem 0;
-      }
-    }
+    &:hover {
+      box-shadow: 5px 15px 25px #828282;
+      transform: scale(1.01);
 
-    &:nth-of-type(2n) {
-      grid-column: 3/12;
-      padding: 2rem 1rem;
-
-      @include for-size(tablet-landscape-up) {
-        padding: 4rem 4rem 4rem 0;
-      }
-
-      .projects__tile__content {
-        flex-direction: column-reverse;
-
-        @include for-size(tablet-landscape-up) {
-          flex-direction: row-reverse;
-        }
-      }
-    }
-
-    &__content {
-      grid-column: 1/12;
-      display: flex;
-      flex-direction: column-reverse;
-
-      @include for-size(tablet-landscape-up) {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+      .projects__tile__image {
+        border-radius: 5px;
       }
     }
 
     &__image {
       width: 100%;
-
-      @include for-size(tablet-landscape-up) {
-        width: 50%;
-      }
     }
 
     &__text {
-      width: 100%;
+      width: auto;
       color: $color__font__main;
+      padding: 1rem 0;
       
 
       @include for-size(tablet-landscape-up) {
-        padding: 0 4rem;
-        width: 50%;
+        padding: 3rem 2rem 2rem;  
+        width: auto;
       }
 
       h3 {
         font-size: 1.25rem;
-        margin-top: 0;
+        margin: 0.5rem 0 0.25rem 0;
 
         @include for-size(tablet-landscape-up) {
-          font-size: 1.5rem;
-          margin-top: unset;
+          font-size: 2rem;
+          font-weight: 400;
+          margin: 0 0 1rem 0;
         }
+      }
+
+      p {
+        margin-bottom: 0;
       }
     }
   }
@@ -420,54 +435,55 @@ html {
   overflow: hidden;
   @include layoutColumns;
   margin-top: 4rem;
-  padding: 6rem 0 0 0;
+  padding: 3rem 0 0 0;
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
   clip-path: polygon(0 9%, 100% 0, 100% 100%, 0 100%);
   @include gradientBackground;
-  height: 75vh;
-
-  @include for-size(tablet-landscape-up) {
-    height: 100vh;
-    padding: 10rem 0 5rem 0;
-  }
+  @include maxWidth();
 
   &__content {
     grid-column: 2/12;
     display: grid;
     grid-template-columns: repeat(10,1fr);
-    grid-template-rows: 1fr 4fr;
+    padding-bottom: 2rem;
+    
 
     @include for-size(tablet-landscape-up) {
-      grid-template-rows: unset;
+      padding-bottom: 2rem;
     }
 
     &__title {
-      grid-column: 1/10;
+      grid-column: 1/12;
       color: $color__font__main;
-      opacity: 0.4;
       text-shadow: 35px 4px 16px rgba(0, 0, 0, 0.2);
-      font-size: 4rem;
-      margin: 0;
+      font-size: 3rem;
       font-weight: 700;
       pointer-events: none;
+      margin: 5rem 0 3rem 0;
+      text-align: center;
 
       @include for-size(tablet-landscape-up) {
-        font-size: 12rem;
-        opacity: 0.17;
+        font-size: 7rem;
+        margin: 5rem 0 2rem 0;
       }
     }
 
     &__form {
       grid-column: 1/12;
+      padding: 1rem;
+      border-radius: 5px;
+      border: 1px solid white;
+      height: fit-content;
 
       @include for-size(tablet-landscape-up) {
-        grid-column: 1/5;
+        grid-column: 3/9;
+        padding: 3rem;
       }
       
       .form {
         height: unset;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
         flex-direction: column;
         
         @include for-size(tablet-landscape-up) {
@@ -478,6 +494,7 @@ html {
         &__name, &__email, &__message {
           display: flex;
           flex-direction: column;
+          padding: 0.5rem 0;
 
           label {
             color: $color__font__main;
@@ -491,9 +508,8 @@ html {
 
           input, textarea {
             padding: 0.5rem;
-            border: 1px solid $color__font__main;
-            border-radius: 4px;
-            background-color: unset;
+            border: 1px solid black;
+            border-radius: 5px;
             margin-bottom: 0.75rem;
 
             @include for-size(tablet-landscape-up) {
@@ -517,12 +533,9 @@ html {
 
       @include for-size(tablet-landscape-up) {
         display: flex;
-        align-items: center;
-        justify-content: center; 
-      }
-
-      svg {
-        height: 100%;
+        align-items: flex-start;
+        opacity: 0.5; 
+        padding: 2rem 0 3rem 4rem;
       }
     }
   }
@@ -531,6 +544,7 @@ html {
 .footer {
   @include gradientBackground;
   @include layoutColumns;
+  @include maxWidth();
   margin-top: -1px;
   padding-bottom: 2rem;
 
