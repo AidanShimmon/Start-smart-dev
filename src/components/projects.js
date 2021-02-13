@@ -28,24 +28,24 @@ const Projects = () => {
           title="Bens bespoke furniture and joinery"
           content="Ben wanted to increase his online presence and create a portfolio, we developed a website that both showcases his work and allows potential clients to easily connect with him."
           link="https://www.bensbespoke.co.uk/"
-          imageUrl={data.allImageSharp.edges[1].node.fluid}
-          imageAlt={data.allImageSharp.edges[1].node.id}
+          imageUrl={data.allImageSharp.edges[2].node.fluid}
+          imageAlt={data.allImageSharp.edges[2].node.id}
         />
 
         <Project
           title="The Hideaway Beauty Cabin"
           content="We designed and developed a custom WordPress theme to allow our client to easily manage and update their website."
           link="https://thehideawaybeautycabin.co.uk/"
-          imageUrl={data.allImageSharp.edges[2].node.fluid}
-          imageAlt={data.allImageSharp.edges[2].node.id}
+          imageUrl={data.allImageSharp.edges[3].node.fluid}
+          imageAlt={data.allImageSharp.edges[3].node.id}
         />
 
         <Project
           title="East Coast Family Restaurant"
           content="This project was a modernisation and refresh of an old website. The website was designed to match current business branding and focused on providing information to customers."
           link="https://upbeat-booth-6bd450.netlify.app/"
-          imageUrl={data.allImageSharp.edges[4].node.fluid}
-          imageAlt={data.allImageSharp.edges[4].node.id}
+          imageUrl={data.allImageSharp.edges[1].node.fluid}
+          imageAlt={data.allImageSharp.edges[1].node.id}
         />
 
         {/* <Project
